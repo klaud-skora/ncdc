@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/ncdc/static/js/main.f41fe6e6.js",
+    "static/js/787.bfd23e4d.chunk.js": "/ncdc/static/js/787.bfd23e4d.chunk.js",
+    "index.html": "/ncdc/index.html",
+    "main.f41fe6e6.js.map": "/ncdc/static/js/main.f41fe6e6.js.map",
+    "787.bfd23e4d.chunk.js.map": "/ncdc/static/js/787.bfd23e4d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f41fe6e6.js"
+  ]
+}
