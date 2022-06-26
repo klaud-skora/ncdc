@@ -1,60 +1,25 @@
 import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
-import { createBreakpoints } from "@chakra-ui/theme-tools";
 import { DeepPartial, Theme, SystemStyleObject } from "@chakra-ui/react";
 
 interface Variants
   extends DeepPartial<Theme["components"]["Button"]["variants"]> {
-  pagination: SystemStyleObject;
+  active: SystemStyleObject;
 }
 
 interface ButtonComponent extends DeepPartial<Theme["components"]["Button"]> {
   variants: Variants;
 }
 
-const breakpoints = createBreakpoints({
-  xs: "25em",
-  sm: "40em",
-  md: "52em",
-  lg: "64em",
-  xl: "80em",
-  "2xl": "96em",
-});
-
 const colors = {
+  main: "#A34E51",
   black: "#000000",
   white: "#ffffff",
-  hover: "#646464",
   disabled: "#8e8e8e",
-  input: "#989898",
-  border: "#e5e5e5",
-};
-
-export const textStyles = {
-  h1: {
-    fontFamily: "Syne",
-    fontSize: ["45px"],
-    fontWeight: 600,
-    lineHeight: "normal",
-    letterSpacing: "normal",
-  },
-  body: {
-    fontSize: ["16px"],
-    fontWeight: "normal",
-    lineHeight: 1.88,
-    letterSpacing: "normal",
-  },
-  bodyLight: {
-    fontSize: ["16px"],
-    fontWeight: 300,
-    lineHeight: 1.88,
-    letterSpacing: "normal",
-  },
 };
 
 const Button: ButtonComponent = {
   baseStyle: {
     fontWeight: 600,
-    fontFamily: "Syne",
     borderRadius: "0",
     minW: "210px",
     minWidth: "210px",
@@ -67,23 +32,21 @@ const Button: ButtonComponent = {
     },
   },
   variants: {
-    link: {
-      minW: "10px",
-      minWidth: "10px",
+    active: {
+      color: "currentColor.500",
+      backgroundColor: "main",
+      borderColor: "main",
+      borderWidth: "1px",
+    },
+    solid: {
+      color: "black",
     },
     outline: {
-      color: "currentColor.500",
-    },
-    ghost: {
-      textDecoration: "underline",
-    },
-    pagination: {
-      border: "none",
-      w: "24px",
-      minWidth: "24px",
-      h: "24px",
-      minHeight: "24px",
-      padding: "20px",
+      minWidth: "100px",
+      color: "main",
+      _disabled: {
+        color: "disabled",
+      },
     },
   },
   defaultProps: {
@@ -94,8 +57,6 @@ const Button: ButtonComponent = {
 
 const theme = extendTheme(
   {
-    breakpoints,
-    textStyles,
     colors,
     components: {
       Button,
